@@ -42,13 +42,26 @@ O SuperMarkerList nasceu e foi desenvolvido com o objetivo de simplificar o gere
 
 ## 📷 Capturas de Tela
 
-Aqui estão algumas capturas de tela da aplicação em ação:
+Aqui estão algumas capturas de tela da aplicação em ambiente desktop e mobile, <br/>
+com o dropdown ativado para visualizar detalhes do item que foi adicionando na lista :
 
-![Página de Listas](screenshots/list-page.png)
+<div>
+<img src="https://github.com/Danielcsxx/supermarkerlist/assets/89713333/f891f371-ae96-407b-8202-7d8400de547a" width:"50%">
+</div>
+
+<br/>
 *Aplicação em ambiente desktop.*
+<br/>
 
-![Adicionar Item](screenshots/add-item.png)
+---
+
+<div>
+<img src="https://github.com/Danielcsxx/supermarkerlist/assets/89713333/b73a9b10-a074-491d-b61d-0a12da7994e9" width:"60%">
+</div>
+
+<br/>
 *Adição em ambiente mobile.*
+<br/>
 
 <br/>
 
