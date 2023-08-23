@@ -1,0 +1,23 @@
+@import url('https://fonts.googleapis.com/css2?family=Neucha&display=swap');
+
+.input {
+    font-family: 'Neucha', cursive;
+    width: 220px;
+    height: 28px;
+    padding: 6px;
+    border-radius: 6px;
+    border: 2px solid black;
+}
+
+input::placeholder {
+    padding-left: 2px;
+}
+
+@media (max-width: 860px) {
+
+    .input {
+        display: block;
+        width: calc(100vw - 40px);
+    }
+
+}

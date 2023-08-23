@@ -1,0 +1,43 @@
+@import url('https://fonts.googleapis.com/css2?family=Neucha&display=swap');
+
+button {
+  font-family: 'Neucha', cursive;
+  letter-spacing: 2px;
+}
+
+.buttonAdd {
+  background-color: #10c000;
+  color: white;
+  font-weight: bold;
+  width: 100px;
+  padding: 10px;
+  border: 2px solid rgb(0, 48, 14);
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.buttonDelete {
+  background-color: transparent;
+  color: #eb2a2a;
+  border: none;
+  cursor: pointer;
+}
+
+.buttonDetails {
+  background-color: transparent;
+  border: none;
+  color: #000;
+  margin-right: 44px;
+  cursor: pointer;
+}
+
+@media (max-width: 860px) {
+
+  .buttonAdd {
+    width: auto;
+  }
+
+  .buttonDetails {
+    margin-right: 16px;
+  }
+}

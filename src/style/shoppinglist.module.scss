@@ -1,0 +1,189 @@
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap');
+
+.main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  width: auto;
+}
+
+.title {
+  font-family: 'Dancing Script', cursive;
+  font-size: 66px;
+  color: rgb(128, 0, 0);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 40px;
+}
+
+form {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 44px;
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.itensList {
+  font-size: 18px;
+  border-top: 2px solid #ccc;
+  max-height: 48vh;
+  overflow-y: auto;
+  scrollbar-width: thin;
+  scrollbar-color: #707070 #f0f0f0;
+}
+
+.itensList {
+  width: 838px;
+  scrollbar-width: auto;
+}
+
+.itensList::-webkit-scrollbar {
+  width: 12px;
+}
+
+.itensList::-webkit-scrollbar-thumb {
+  background-color: #707070;
+  border-radius: 4px;
+}
+
+.itensList::-webkit-scrollbar-track {
+  background-color: #f0f0f0;
+  border-radius: 2px;
+}
+
+.itensList::-webkit-scrollbar-button {
+  display: none;
+}
+
+.infoProduct {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  span {
+    flex: 1
+  }
+}
+
+.infoPriceItem {
+  display: flex;
+  align-items: center;
+
+  span {
+    margin-right: 88px;
+  }
+}
+
+.infoDetailsItem {
+  width: 55%;
+  background-color: #777777;
+  color: #FFF;
+  padding: 10px;
+  border-radius: 6px;
+  margin-top: 8px;
+
+  p {
+    padding: 2px;
+  }
+}
+
+.infoPrice {
+  display: flex;
+  width: 838px;
+  font-size: 22px;
+  justify-content: flex-end;
+  align-items: center;
+  margin-top: 22px;
+}
+
+.listItem {
+  padding: 10px;
+  border-bottom: 2px solid #CCC;
+}
+
+.product-price-container {
+  display: flex;
+  align-items: center;
+}
+
+.product-price {
+  text-align: right;
+  margin-left: auto;
+}
+
+@media (max-width: 1200px) and (max-width: 860px) {
+
+  .main {
+    height: auto;
+
+    form {
+      display: flex;
+      flex-direction: column;
+      margin: 12px;
+    }
+  }
+
+  .title {
+    margin-top: 10vh;
+    font-size: 38px;
+    margin-bottom: 20px;
+  }
+
+  ul {
+    margin: 12px;
+  }
+
+  .itensList {
+    font-size: 14px;
+    width: calc(100vw - 40px);
+  }
+
+  .infoPrice {
+    display: flex;
+    width: 100%;
+    font-size: 22px;
+    justify-content: center;
+    align-items: center;
+    margin-top: 22px;
+    margin-bottom: 32px;
+  }
+
+  .infoProduct {
+    span {
+      max-width: 100px;
+    }
+  }
+
+  .infoPriceItem {
+    span {
+      margin-right: 12px;
+    }
+  }
+
+  .infoDetailsItem {
+    width: calc(80vw - 10px);
+  }
+}
+
+@media (max-width: 330px) {
+  .title {
+    margin-top: 20vh;
+    font-size: 32px;
+  }
+
+  span {
+    font-size: 14px;
+  }
+
+  .itensList {
+    font-size: 14px;
+    width: calc(100vw - 40px);
+  }
+}
