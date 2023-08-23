@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import styles from './style/shoppinglist.module.scss';
 import { Input } from './components/Input';
 import { Button } from './components/Button';
@@ -12,6 +12,16 @@ interface Product {
   price: number;
 }
 
+const loadProductsFromLocalStorage = (): Product[] => {
+  const storedProducts = localStorage.getItem('shoppingListProducts');
+  const parsedStoreProducts = storedProducts ? JSON.parse(storedProducts) : [];
+  return parsedStoreProducts;
+};
+
+const saveProductsToLocalStorage = (products: Product[]) => {
+  localStorage.setItem('shoppingListProducts', JSON.stringify(products));
+}
+
 export function ShoppingList() {
   const [products, setProducts] = useState<Product[]>([]);
   const [product, setProduct] = useState('');
@@ -20,6 +30,15 @@ export function ShoppingList() {
   const [totalPrice, setTotalPrice] = useState(0);
   const [selectedItem, setSelectedItem] = useState<Product | null>(null);
   const [addButtonClicked, setAddButtonClicked] = useState(false);
+
+  useEffect(() => {
+    const storedProducts = loadProductsFromLocalStorage();
+    setProducts(storedProducts);
+
+    const storedTotalPrice = localStorage.getItem('shoppingListTotalPrice');
+    const parsedTotalPrice = storedTotalPrice ? parseFloat(storedTotalPrice) : 0;
+    setTotalPrice(parsedTotalPrice);
+  }, []);
 
   const handleAddItem = () => {
     if (!product || isNaN(parseFloat(unitPrice))) {
@@ -36,7 +55,9 @@ export function ShoppingList() {
       price: priceValue,
     };
 
-    setProducts([...products, newItem]);
+    const updatedProducts = [...products, newItem];
+
+    setProducts(updatedProducts);
     setProduct('');
     setQuantity(1);
     setUnitPrice('');
@@ -44,13 +65,26 @@ export function ShoppingList() {
     const newTotal = totalPrice + priceValue;
     setTotalPrice(newTotal);
     setAddButtonClicked(false);
+
+    setProducts(updatedProducts);
+
+    saveProductsToLocalStorage(updatedProducts);
+
+    if (newTotal !== null) {
+      localStorage.setItem('shoppingListTotalPrice', newTotal.toString());
+    }
   };
 
-  const handleDeleteItem = (id: number, price: number) => {
-    setProducts(products.filter(item => item.id !== id));
+  const handleDeleteItem = (id: number) => {
+    const updatedProducts = products.filter(item => item.id !== id);
 
-    const newTotal = totalPrice - price;
+    setProducts(updatedProducts);
+
+    const newTotal = updatedProducts.reduce((total, item) => total + item.price, 0);
     setTotalPrice(newTotal);
+
+    saveProductsToLocalStorage(updatedProducts);
+    localStorage.setItem('shoppingListTotalPrice', newTotal.toString());
   };
 
   const toggleSelectedItem = (item: Product) => {
@@ -122,7 +156,7 @@ export function ShoppingList() {
                 <Button buttonStyle="buttonDetails" onClick={() => toggleSelectedItem(item)}>
                   {selectedItem === item ? <FaChevronUp size={22} /> : <FaChevronDown size={22} />}
                 </Button>
-                <Button buttonStyle="buttonDelete" onClick={() => handleDeleteItem(item.id, item.price)}>
+                <Button buttonStyle="buttonDelete" onClick={() => handleDeleteItem(item.id)}>
                   <FaTrash size={20} />
                 </Button>
               </div>

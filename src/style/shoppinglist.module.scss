@@ -33,7 +33,7 @@ ul {
 .itensList {
   font-size: 18px;
   border-top: 2px solid #ccc;
-  max-height: 48vh;
+  max-height: 52vh;
   overflow-y: auto;
   scrollbar-width: thin;
   scrollbar-color: #707070 #f0f0f0;
@@ -82,7 +82,7 @@ ul {
 }
 
 .infoDetailsItem {
-  width: 55%;
+  width: auto;
   background-color: #777777;
   color: #FFF;
   padding: 10px;
