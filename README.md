@@ -5,10 +5,10 @@ O SuperMarkerList nasceu e foi desenvolvido com o objetivo de simplificar o gere
 
 <div style="text-align: center;">
   <h2>
-    <a href="#-sobre-o-app">Sobre</a> &#xa0; | &#xa0;
-    <a href="#-funcionalidades">Funcionalidades</a> &#xa0; | &#xa0;
-    <a href="#-capturas-de-tela">Capturas de Tela</a> &#xa0; | &#xa0;
-    <a href="#-tecnologias-utilizadas">Tecnologias</a> &#xa0; | &#xa0;
+    <a href="#-sobre-o-app">Sobre</a> -
+    <a href="#-funcionalidades">Funcionalidades</a> -
+    <a href="#-capturas-de-tela">Capturas de Tela</a> -
+    <a href="#-tecnologias-utilizadas">Tecnologias</a> -
     <a href="#-como-usar">Como Usar</a>
   </h2>
 </div>
