@@ -25,7 +25,7 @@ const saveProductsToLocalStorage = (products: Product[]) => {
 export function ShoppingList() {
   const [products, setProducts] = useState<Product[]>([]);
   const [product, setProduct] = useState('');
-  const [quantity, setQuantity] = useState(1);
+  const [quantity, setQuantity] = useState<number | null>(null);
   const [unitPrice, setUnitPrice] = useState('');
   const [totalPrice, setTotalPrice] = useState(0);
   const [selectedItem, setSelectedItem] = useState<Product | null>(null);
@@ -46,11 +46,14 @@ export function ShoppingList() {
       return;
     }
 
-    const priceValue = parseFloat(unitPrice.replace(',', '.')) * quantity;
+    const correctedQuantity = quantity === null || quantity === 0 ? 1 : quantity;
+
+    const priceValue = parseFloat(unitPrice.replace(',', '.')) * correctedQuantity;
+
     const newItem: Product = {
       id: Date.now(),
       product,
-      quantity,
+      quantity: correctedQuantity,
       unitPrice: parseFloat(unitPrice.replace(',', '.')),
       price: priceValue,
     };
@@ -112,15 +115,15 @@ export function ShoppingList() {
           inputMode='numeric'
           placeholder="Quantidade"
           value={quantity !== null ? quantity : ''}
-          onChange={e => {
-            const newValue = e.target.value !== '' ? parseInt(e.target.value) : null;
-            if (newValue === null || (newValue >= 1 && newValue <= 99)) {
-              setQuantity(newValue !== null ? newValue : 1);
+          onChange={(e) => {
+            const newValue = e.target.value !== '' ? parseInt(e.target.value, 10) : null;
+            if (newValue === null || (newValue >= 0 && newValue <= 99)) {
+              setQuantity(newValue !== null ? newValue : null);
             }
           }}
-          min="1"
+          min="0"
           max="99"
-          required={addButtonClicked && (quantity === null || isNaN(quantity))}
+          required={addButtonClicked && (quantity === null || isNaN(quantity) || quantity < 1 || quantity > 99)}
         />
         <Input
           type="text"
