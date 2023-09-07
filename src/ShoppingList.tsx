@@ -114,7 +114,7 @@ export function ShoppingList() {
           inputMode='numeric'
           placeholder="Quantidade"
           value={quantity !== null ? quantity : ''}
-          onChange={(e) => {
+          onChange={e => {
             const newValue = e.target.value !== '' ? parseInt(e.target.value, 10) : null;
             if (newValue === null || (newValue >= 0 && newValue <= 99)) {
               setQuantity(newValue !== null ? newValue : null);
@@ -132,10 +132,8 @@ export function ShoppingList() {
             const inputValue = e.target.value;
             const cleanedValue = inputValue.replace(/[^0-9.,]/g, '');
             const parts = cleanedValue.split(/,|\./);
-            if (
-              (parts[0].length <= 3 && (parts[1] === undefined || parts[1].length <= 2)) ||
-              cleanedValue === ""
-            ) {
+            if ((parts[0].length <= 3 && (parts[1] === undefined || parts[1].length <= 2)) ||
+              cleanedValue === "") {
               setUnitPrice(cleanedValue);
             }
           }}
@@ -167,15 +165,13 @@ export function ShoppingList() {
               <div className={styles.infoDetailsItem}>
                 <p>{"Detalhes do Item:"}</p>
                 <p>{"Quantidade:"} {item.quantity}{" x"}</p>
-                <p>{"Valor Unitário: R$"}{item.unitPrice.toFixed(2)}</p>
+                <p>{"Valor Unitário: R$ "}{item.unitPrice.toFixed(2)}</p>
               </div>
             )}
           </li>
         ))}
       </ul>
-      <p
-        className={styles.infoPrice}
-      >
+      <p className={styles.infoPrice}>
         {"Total:"} {products.length > 0 ? `R$ ${totalPrice.toFixed(2)}` : 'R$ 0.00'}
       </p>
     </div>
