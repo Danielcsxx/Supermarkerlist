@@ -31,15 +31,6 @@ export function ShoppingList() {
   const [selectedItem, setSelectedItem] = useState<Product | null>(null);
   const [addButtonClicked, setAddButtonClicked] = useState(false);
 
-  useEffect(() => {
-    const storedProducts = loadProductsFromLocalStorage();
-    setProducts(storedProducts);
-
-    const storedTotalPrice = localStorage.getItem('shoppingListTotalPrice');
-    const parsedTotalPrice = storedTotalPrice ? parseFloat(storedTotalPrice) : 0;
-    setTotalPrice(parsedTotalPrice);
-  }, []);
-
   const handleAddItem = () => {
     if (!product || isNaN(parseFloat(unitPrice))) {
       setAddButtonClicked(true);
@@ -69,8 +60,6 @@ export function ShoppingList() {
     setTotalPrice(newTotal);
     setAddButtonClicked(false);
 
-    setProducts(updatedProducts);
-
     saveProductsToLocalStorage(updatedProducts);
 
     if (newTotal !== null) {
@@ -89,6 +78,16 @@ export function ShoppingList() {
     saveProductsToLocalStorage(updatedProducts);
     localStorage.setItem('shoppingListTotalPrice', newTotal.toString());
   };
+
+  useEffect(() => {
+    const storedProducts = loadProductsFromLocalStorage();
+    setProducts(storedProducts);
+
+    const storedTotalPrice = localStorage.getItem('shoppingListTotalPrice');
+    const parsedTotalPrice = storedTotalPrice ? parseFloat(storedTotalPrice) : 0;
+    setTotalPrice(parsedTotalPrice);
+  }, []);
+
 
   const toggleSelectedItem = (item: Product) => {
     if (selectedItem === item) {
