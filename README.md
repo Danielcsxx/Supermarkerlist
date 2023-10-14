@@ -55,7 +55,8 @@ com o dropdown ativado para visualizar detalhes do item que foi adicionando na l
 <br/>
 
 <div>
-<img src="https://github.com/Danielcsxx/supermarkerlist/assets/89713333/e614ce06-70a5-475a-b110-bf3d2c571136" width:"50%">
+<img src="https://github.com/Danielcsxx/supermarkerlist/assets/89713333/39d80186-02e7-4682-960c-03ac0d193875" width:"50%">
+
 </div>
 
 
@@ -66,7 +67,7 @@ com o dropdown ativado para visualizar detalhes do item que foi adicionando na l
 <br/>
 
 <div>
-<img src="https://github.com/Danielcsxx/supermarkerlist/assets/89713333/c4d0a240-0a89-435e-90a8-3546ae9454e3" width:"60%">
+<img src="https://github.com/Danielcsxx/supermarkerlist/assets/89713333/d0584862-6fa6-403e-8a22-eec10b050791" width:"60%">
 </div>
 
 <br/>
