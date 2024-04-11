@@ -1,24 +1,23 @@
-@import url('https://fonts.googleapis.com/css2?family=Neucha&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
 
 button {
-  font-family: 'Neucha', cursive;
-  letter-spacing: 2px;
+  font-family: 'Roboto', sans-serif;
+  letter-spacing: .4px;
 }
 
 .buttonAdd {
   background-color: #10c000;
-  color: white;
+  color: #FFF;
   font-weight: bold;
-  width: 100px;
-  padding: 10px;
-  border: 2px solid rgb(0, 48, 14);
+  width: 74px;
+  border: 2px solid #111;
   border-radius: 6px;
   cursor: pointer;
 }
 
 .buttonDelete {
   background-color: transparent;
-  color: #eb2a2a;
+  color: #Eb2A2A;
   border: none;
   cursor: pointer;
 }
@@ -26,7 +25,7 @@ button {
 .buttonDetails {
   background-color: transparent;
   border: none;
-  color: #000;
+  color: #222;
   margin-right: 44px;
   cursor: pointer;
 }

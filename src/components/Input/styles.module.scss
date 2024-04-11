@@ -1,12 +1,12 @@
-@import url('https://fonts.googleapis.com/css2?family=Neucha&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
 
 .input {
-    font-family: 'Neucha', cursive;
-    width: 220px;
-    height: 28px;
+    font-family: 'Roboto', sans-serif;
+    width: 120px;
+    height: 26px;
     padding: 6px;
     border-radius: 6px;
-    border: 2px solid black;
+    border: 2px solid #222;
 }
 
 input::placeholder {
