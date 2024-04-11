@@ -128,6 +128,7 @@ const ShoppingList: React.FC = () => {
           />
           <Input
             type="text"
+            inputMode='numeric'
             placeholder="Valor Unitário"
             value={unitPrice}
             onChange={e => {
